@@ -1,20 +1,40 @@
-[gd_scene load_steps=4 format=3 uid="uid://c1iqxxe8kttf3"]
+[gd_scene load_steps=7 format=3 uid="uid://bo7tou4esqy2g"]
 
-[ext_resource type="Texture2D" uid="uid://3kfb3g8crd5w" path="res://assets/Spritesheet.png" id="1_4flbx"]
-[ext_resource type="Script" uid="uid://dadgi82d4h0em" path="res://Player/Player.gd" id="1_onrkg"]
+[ext_resource type="Script" uid="uid://dadgi82d4h0em" path="res://Player/player.gd" id="1_q3lat"]
+[ext_resource type="Texture2D" uid="uid://dps6ancrck61t" path="res://assets/sprites/player/mari_f1.png" id="2_gwnis"]
+[ext_resource type="Texture2D" uid="uid://cmkbmlqpbchox" path="res://assets/sprites/player/mari_f2.png" id="3_k53q1"]
+[ext_resource type="Texture2D" uid="uid://garw8my8fu0y" path="res://assets/sprites/player/mari_f3.png" id="4_fhl08"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
-size = Vector2(160, 160)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ddoul"]
+size = Vector2(42, 9)
 
-[node name="Player" type="Node2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_vtle1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gwnis")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k53q1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fhl08")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
-[node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("1_onrkg")
+[node name="Player" type="Area2D"]
+script = ExtResource("1_q3lat")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-position = Vector2(0, 2)
-texture = ExtResource("1_4flbx")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 19.5)
+shape = SubResource("RectangleShape2D_ddoul")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 2)
-shape = SubResource("RectangleShape2D_onrkg")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_vtle1")
+frame = 2
+frame_progress = 0.499754

@@ -1,18 +1,22 @@
 [gd_scene load_steps=4 format=3 uid="uid://dcqfuv7i4nblp"]
 
-[ext_resource type="Texture2D" uid="uid://dxk6rvcodlmnh" path="res://assets/icon.svg" id="1_v7oki"]
 [ext_resource type="Script" uid="uid://yvcgfyfeyluv" path="res://Player/bullet.gd" id="1_v8qja"]
+[ext_resource type="Texture2D" uid="uid://unetagk3ys73" path="res://assets/sprites/player/tile018.png" id="2_tqmay"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v7oki"]
-size = Vector2(128, 128)
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_tqmay"]
+a = Vector2(16.9896, 0)
+b = Vector2(-14.0104, 0)
 
-[node name="Node2D" type="Node2D"]
-
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Node2D" type="Area2D"]
 script = ExtResource("1_v8qja")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-texture = ExtResource("1_v7oki")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+rotation = 0.785398
+scale = Vector2(2, 2)
+texture = ExtResource("2_tqmay")
+offset = Vector2(0, -2)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_v7oki")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.0104079, 0)
+shape = SubResource("SegmentShape2D_tqmay")

@@ -11,9 +11,8 @@ config_version=5
 [application]
 
 config/name="the legend of mari"
-run/main_scene="uid://c1iqxxe8kttf3"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://assets/icon.svg"
+config/icon="res://icon.svg"
 
 [input]
 
