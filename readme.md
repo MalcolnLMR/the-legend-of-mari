@@ -7,4 +7,4 @@ Is a study project to remake my project 'The Legend of Otomarih' but using Godot
 - [ ] Improve sprites
 - [ ] Add two new enemies
 - [ ] Add three new levels
-- [ ] Fix original bugs (e.g. arrow direction on shoot)
+- [x] Fix original bugs (e.g. arrow direction on shoot)

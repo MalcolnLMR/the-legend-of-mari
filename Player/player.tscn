@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bo7tou4esqy2g"]
+[gd_scene load_steps=8 format=3 uid="uid://bo7tou4esqy2g"]
 
 [ext_resource type="Script" uid="uid://dadgi82d4h0em" path="res://Player/player.gd" id="1_q3lat"]
 [ext_resource type="Texture2D" uid="uid://dps6ancrck61t" path="res://assets/sprites/player/mari_f1.png" id="2_gwnis"]
 [ext_resource type="Texture2D" uid="uid://cmkbmlqpbchox" path="res://assets/sprites/player/mari_f2.png" id="3_k53q1"]
 [ext_resource type="Texture2D" uid="uid://garw8my8fu0y" path="res://assets/sprites/player/mari_f3.png" id="4_fhl08"]
+[ext_resource type="Texture2D" uid="uid://bm8niw1v8g1sn" path="res://assets/sprites/player/tile009.png" id="5_k53q1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ddoul"]
 size = Vector2(42, 9)
@@ -25,7 +26,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="Area2D"]
+[node name="Player" type="RigidBody2D" groups=["player"]]
+gravity_scale = 0.0
+lock_rotation = true
 script = ExtResource("1_q3lat")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -38,3 +41,11 @@ scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_vtle1")
 frame = 2
 frame_progress = 0.499754
+
+[node name="Node2D" type="Node2D" parent="."]
+scale = Vector2(3, 3)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+texture_filter = 1
+position = Vector2(10, 0)
+texture = ExtResource("5_k53q1")

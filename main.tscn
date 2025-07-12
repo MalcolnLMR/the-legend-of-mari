@@ -1,11 +1,27 @@
-[gd_scene format=3 uid="uid://cdfwcqt1476bx"]
+[gd_scene load_steps=3 format=3 uid="uid://cdfwcqt1476bx"]
+
+[ext_resource type="PackedScene" uid="uid://captb3qwmt6dl" path="res://Levels/level_01.tscn" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://dwbpndtvh8f87" path="res://gui.gd" id="1_ig7tw"]
 
 [node name="Main" type="Node"]
 
 [node name="World" type="Node2D" parent="."]
 
-[node name="Control" type="Control" parent="."]
+[node name="level_01" parent="World" instance=ExtResource("1_0xm2m")]
+
+[node name="GUI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_ig7tw")
+
+[node name="Label" type="Label" parent="GUI"]
+layout_mode = 0
+offset_left = -564.0
+offset_top = -317.0
+offset_right = -521.0
+offset_bottom = -292.0
+text = "Vida: "
+
+[node name="Camera2D" type="Camera2D" parent="."]

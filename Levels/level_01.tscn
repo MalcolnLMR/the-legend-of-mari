@@ -1,7 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://captb3qwmt6dl"]
+[gd_scene load_steps=3 format=3 uid="uid://captb3qwmt6dl"]
 
 [ext_resource type="PackedScene" uid="uid://bo7tou4esqy2g" path="res://Player/player.tscn" id="1_hb0y7"]
+[ext_resource type="PackedScene" uid="uid://id7wamuvr1y2" path="res://Enemies/lil_red.tscn" id="2_1jt1u"]
 
 [node name="level_01" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_hb0y7")]
+
+[node name="LilRed" parent="." instance=ExtResource("2_1jt1u")]
+position = Vector2(346, 113)
+
+[node name="LilRed2" parent="." instance=ExtResource("2_1jt1u")]
+position = Vector2(428, 155)
+
+[node name="LilRed3" parent="." instance=ExtResource("2_1jt1u")]
+position = Vector2(334, 234)

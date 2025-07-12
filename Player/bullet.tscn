@@ -4,16 +4,20 @@
 [ext_resource type="Texture2D" uid="uid://unetagk3ys73" path="res://assets/sprites/player/tile018.png" id="2_tqmay"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_tqmay"]
-a = Vector2(16.9896, 0)
-b = Vector2(-14.0104, 0)
+a = Vector2(20.9896, 0)
+b = Vector2(-17.0104, 0)
 
-[node name="Node2D" type="Area2D"]
+[node name="Node2D" type="RigidBody2D" groups=["bullet"]]
+collision_layer = 2
+collision_mask = 2
+gravity_scale = 0.0
+lock_rotation = true
 script = ExtResource("1_v8qja")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 rotation = 0.785398
-scale = Vector2(2, 2)
+scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_tqmay")
 offset = Vector2(0, -2)
 
