@@ -23,10 +23,10 @@ Fist of all, I need to specify some mechanics that will be necessary.
 - [x] move and slide
 
 ### Others
-- [ ] Player variables must be showing on the UI (health and ammo)
+- [x] Player variables must be showing on the UI (health and ammo)
 - [ ] The weapon must be on the floor, and the player collects it
 - [x] The weapon floats around the player showing where he's aiming
-- [ ] Camera follows the player (with lerp plz)
+- [x] Camera follows the player (with lerp plz)
 
 ## Enemies
 ### Basics

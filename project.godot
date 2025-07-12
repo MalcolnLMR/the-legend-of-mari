@@ -24,6 +24,8 @@ PlayerVariables="*res://global/player_variables.gd"
 player=""
 bullet=""
 enemy=""
+camera=""
+gui=""
 
 [input]
 

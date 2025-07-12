@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cdfwcqt1476bx"]
+[gd_scene load_steps=4 format=3 uid="uid://cdfwcqt1476bx"]
 
 [ext_resource type="PackedScene" uid="uid://captb3qwmt6dl" path="res://Levels/level_01.tscn" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://dwbpndtvh8f87" path="res://gui.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://blcvuvwd76vcb" path="res://camera_2d.gd" id="3_h2yge"]
 
 [node name="Main" type="Node"]
 
@@ -9,27 +10,35 @@
 
 [node name="level_01" parent="World" instance=ExtResource("1_0xm2m")]
 
-[node name="GUI" type="Control" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." groups=["camera"]]
+script = ExtResource("3_h2yge")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." groups=["gui"]]
+
+[node name="GUI" type="Control" parent="CanvasLayer"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 0
 script = ExtResource("1_ig7tw")
 
-[node name="Health" type="Label" parent="GUI"]
+[node name="Health" type="Label" parent="CanvasLayer/GUI"]
 layout_mode = 0
-offset_left = -564.0
-offset_top = -317.0
-offset_right = -521.0
-offset_bottom = -292.0
+offset_left = -1139.0
+offset_top = -640.0
+offset_right = -1096.0
+offset_bottom = -617.0
 text = "Vida: "
 
-[node name="Ammo" type="Label" parent="GUI"]
+[node name="Ammo" type="Label" parent="CanvasLayer/GUI"]
 layout_mode = 0
-offset_left = -565.0
-offset_top = -294.0
-offset_right = -494.0
-offset_bottom = -271.0
+offset_left = -1139.0
+offset_top = -620.0
+offset_right = -1068.0
+offset_bottom = -597.0
 text = "Munição:"
-
-[node name="Camera2D" type="Camera2D" parent="."]
