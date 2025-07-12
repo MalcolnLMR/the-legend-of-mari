@@ -16,12 +16,20 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_ig7tw")
 
-[node name="Label" type="Label" parent="GUI"]
+[node name="Health" type="Label" parent="GUI"]
 layout_mode = 0
 offset_left = -564.0
 offset_top = -317.0
 offset_right = -521.0
 offset_bottom = -292.0
 text = "Vida: "
+
+[node name="Ammo" type="Label" parent="GUI"]
+layout_mode = 0
+offset_left = -565.0
+offset_top = -294.0
+offset_right = -494.0
+offset_bottom = -271.0
+text = "Munição:"
 
 [node name="Camera2D" type="Camera2D" parent="."]

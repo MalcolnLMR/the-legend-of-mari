@@ -16,17 +16,15 @@ Fist of all, I need to specify some mechanics that will be necessary.
 ### Basics
 - [x] Movement
 - [x] Shoot
-- [ ] Jump (nah, jump boring)
 - [x] Health
 - [x] Take hit
 - [ ] die/game over
-- [ ] sprint
-- [ ] move and slide
+- [x] sprint
+- [x] move and slide
 
 ### Others
 - [ ] Player variables must be showing on the UI (health and ammo)
 - [ ] The weapon must be on the floor, and the player collects it
-- [ ] Jump mechanic to go over rock walls.
 - [x] The weapon floats around the player showing where he's aiming
 - [ ] Camera follows the player (with lerp plz)
 
