@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://82rg1l2asxah"
-path="res://.godot/imported/tile011.png-402878355436d13f75733edfbba4984e.ctex"
+uid="uid://drb7bopsjw5bf"
+path="res://.godot/imported/floor_flowers.png-41e7cdd9e3052c101b69a7dcdbefb5c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/world/tile011.png"
-dest_files=["res://.godot/imported/tile011.png-402878355436d13f75733edfbba4984e.ctex"]
+source_file="res://assets/sprites/world/floor_flowers.png"
+dest_files=["res://.godot/imported/floor_flowers.png-41e7cdd9e3052c101b69a7dcdbefb5c2.ctex"]
 
 [params]
 

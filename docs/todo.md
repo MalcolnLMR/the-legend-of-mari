@@ -4,13 +4,14 @@ Fist of all, I need to specify some mechanics that will be necessary.
 
 ## Levels
 ### Basics
-- [ ] Tilemap
+- [x] Tilemap
 - [ ] Level 1
 - [ ] Level 2
 - [ ] Level 3
 
 ### Others
 - [ ] Must be able to go to next level when killing all enemies.
+- [ ] Put viewport and UI to a separete scene
 
 ## Player
 ### Basics
