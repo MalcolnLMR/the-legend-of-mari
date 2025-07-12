@@ -1,13 +1,19 @@
-[gd_scene load_steps=11 format=3 uid="uid://bo7tou4esqy2g"]
+[gd_scene load_steps=17 format=3 uid="uid://bo7tou4esqy2g"]
 
 [ext_resource type="Script" uid="uid://dadgi82d4h0em" path="res://Player/player.gd" id="1_q3lat"]
-[ext_resource type="Texture2D" uid="uid://dps6ancrck61t" path="res://assets/sprites/player/mari_f1.png" id="2_gwnis"]
-[ext_resource type="Texture2D" uid="uid://cmkbmlqpbchox" path="res://assets/sprites/player/mari_f2.png" id="3_k53q1"]
-[ext_resource type="Texture2D" uid="uid://garw8my8fu0y" path="res://assets/sprites/player/mari_f3.png" id="4_fhl08"]
+[ext_resource type="Texture2D" uid="uid://ckg0s5od5vkde" path="res://assets/sprites_rework/mari/mari1.png" id="2_fhl08"]
+[ext_resource type="Texture2D" uid="uid://kqis0xatt0vg" path="res://assets/sprites_rework/mari/mari_looking_down2.png" id="3_00tjw"]
+[ext_resource type="Texture2D" uid="uid://cwd5ur1nm7uat" path="res://assets/sprites_rework/mari/mari3.png" id="3_vtle1"]
+[ext_resource type="Texture2D" uid="uid://c2tapied8wivh" path="res://assets/sprites_rework/mari/mari_looking_down3.png" id="4_x3vf3"]
+[ext_resource type="Texture2D" uid="uid://c3w4mqajte3l8" path="res://assets/sprites_rework/mari/mari2.png" id="5_00tjw"]
+[ext_resource type="Texture2D" uid="uid://ct5r18n52i0gc" path="res://assets/sprites_rework/mari/mari_looking_down4.png" id="5_apopc"]
 [ext_resource type="Texture2D" uid="uid://bm8niw1v8g1sn" path="res://assets/sprites/player/tile009.png" id="5_k53q1"]
-[ext_resource type="Texture2D" uid="uid://cdbehmbosy5e4" path="res://assets/sprites/player/mari_b1.png" id="5_od3ui"]
-[ext_resource type="Texture2D" uid="uid://ffqgywtc71h0" path="res://assets/sprites/player/mari_b2.png" id="6_00tjw"]
-[ext_resource type="Texture2D" uid="uid://b24rp56gx8qke" path="res://assets/sprites/player/mari_b3.png" id="7_x3vf3"]
+[ext_resource type="Texture2D" uid="uid://7um04i1qd0yc" path="res://assets/sprites_rework/mari/mari_looking_right1.png" id="7_apopc"]
+[ext_resource type="Texture2D" uid="uid://b03wresfihaf3" path="res://assets/sprites_rework/mari/mari_looking_right2.png" id="8_5htga"]
+[ext_resource type="Texture2D" uid="uid://hfvgjwmx3ps1" path="res://assets/sprites_rework/mari/mari_looking_right4.png" id="9_p5o4e"]
+[ext_resource type="Texture2D" uid="uid://7y010d23xdhy" path="res://assets/sprites_rework/mari/mari_looking_up2.png" id="11_gu6f8"]
+[ext_resource type="Texture2D" uid="uid://dt3gu4j2xu8ol" path="res://assets/sprites_rework/mari/mari_looking_up1.png" id="12_dkpta"]
+[ext_resource type="Texture2D" uid="uid://beqifmiqmxrci" path="res://assets/sprites_rework/mari/mari_looking_up4.png" id="13_lfmf2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ddoul"]
 size = Vector2(42, 9)
@@ -16,13 +22,16 @@ size = Vector2(42, 9)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_gwnis")
+"texture": ExtResource("2_fhl08")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_k53q1")
+"texture": ExtResource("3_00tjw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_fhl08")
+"texture": ExtResource("4_x3vf3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_apopc")
 }],
 "loop": true,
 "name": &"looking_down",
@@ -30,13 +39,41 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_od3ui")
+"texture": ExtResource("3_vtle1")
+}],
+"loop": true,
+"name": &"looking_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_apopc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_00tjw")
+"texture": ExtResource("8_5htga")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_x3vf3")
+"texture": ExtResource("7_apopc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_p5o4e")
+}],
+"loop": true,
+"name": &"looking_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_00tjw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_gu6f8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_dkpta")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_lfmf2")
 }],
 "loop": true,
 "name": &"looking_up",
@@ -55,7 +92,7 @@ shape = SubResource("RectangleShape2D_ddoul")
 texture_filter = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_vtle1")
-animation = &"looking_up"
+animation = &"looking_right"
 
 [node name="Node2D" type="Node2D" parent="."]
 scale = Vector2(3, 3)

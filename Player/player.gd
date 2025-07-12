@@ -5,6 +5,8 @@ var player := true
 var speed: int = 400
 @export var sprint_speed: int = 600
 @export var normal_speed: int = 400
+var anim_speed: int = 0
+var offset_to_look_up: int = 100
 var screen_size
 var Bullet := preload("res://Player/bullet.tscn")
 @onready var Collision := $CollisionShape2D
@@ -23,19 +25,35 @@ func weapon_logic(_delta: float) -> void:
 		new_bullet.global_position = Bow.global_position
 		new_bullet.rotation = BowParent.rotation
 
-func change_sprite_when_look_up() -> void:
-	if get_global_mouse_position().y < position.y:
-		Sprite.play("looking_up", 0)
-	else:
-		Sprite.play("looking_down", 0)
+func change_sprite_when_look_up() -> void:	
 	if isWalking:
-		Sprite.play()
+		anim_speed = 2
+	else:
+		anim_speed = 0
+			
+	if get_global_mouse_position().x + offset_to_look_up < position.x:
+		Sprite.play("looking_right", anim_speed); Sprite.scale.x = -3; return
+	elif get_global_mouse_position().x - offset_to_look_up > position.x:
+		Sprite.play("looking_right", anim_speed); Sprite.scale.x = 3; return
+	if get_global_mouse_position().y < position.y:
+		Sprite.play("looking_up", anim_speed); return
+	else:
+		Sprite.play("looking_down", anim_speed); return
+
 
 func flip_x_when_look_left() -> void:
 	if get_global_mouse_position().x > position.x:
 		Sprite.scale.x = 3
 	else:
 		Sprite.scale.x = -3
+
+func change_sprite_when_walking() -> void:
+	if velocity == Vector2.ZERO: return
+	if velocity.y < 0: Sprite.play("looking_up"); return
+	if velocity.y > 0: Sprite.play("looking_down"); return
+	if velocity.x < 0: Sprite.play("looking_right"); return
+	if velocity.x > 0: Sprite.play("looking_left"); return
+	
 
 func movement_logic(delta: float) -> void:
 	velocity = Vector2.ZERO
@@ -72,5 +90,5 @@ func _physics_process(delta: float) -> void:
 	
 	# Rotating weapon towards mouse cursor
 	BowParent.look_at(get_global_mouse_position())
-	flip_x_when_look_left()
+	#flip_x_when_look_left()
 	
