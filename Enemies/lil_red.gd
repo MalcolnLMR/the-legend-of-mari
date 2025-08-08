@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+signal enemy_death
+
 @export var speed: int = 5
 @export var health: int = 3
 @export var max_health: int = 3
@@ -26,6 +28,7 @@ func flip_y_on_look_at_logic() -> void:
 		scale.y = 1
 	
 func die() -> void:
+	emit_signal("enemy_death")
 	queue_free()
 
 func damage_enemy(_damage: int) -> void:
@@ -48,6 +51,7 @@ func _ready() -> void:
 		if Player != null: theresPlayer = true
 
 func on_collision(collider: Object) -> void:
+	if collider.get_groups() == []: return
 	match collider.get_groups()[0]:
 		"player":
 			if not is_attack_in_cooldown: 

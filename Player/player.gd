@@ -40,7 +40,6 @@ func change_sprite_when_look_up() -> void:
 	else:
 		Sprite.play("looking_down", anim_speed); return
 
-
 func flip_x_when_look_left() -> void:
 	if get_global_mouse_position().x > position.x:
 		Sprite.scale.x = 3
@@ -53,7 +52,6 @@ func change_sprite_when_walking() -> void:
 	if velocity.y > 0: Sprite.play("looking_down"); return
 	if velocity.x < 0: Sprite.play("looking_right"); return
 	if velocity.x > 0: Sprite.play("looking_left"); return
-	
 
 func movement_logic(delta: float) -> void:
 	velocity = Vector2.ZERO
@@ -77,6 +75,9 @@ func movement_logic(delta: float) -> void:
 		isWalking = false
 	
 	move_and_slide()
+
+func check_for_item_collision() -> void:
+	pass
 
 func _ready():
 	screen_size = get_viewport_rect().size

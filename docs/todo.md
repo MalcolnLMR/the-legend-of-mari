@@ -2,16 +2,21 @@
 
 Fist of all, I need to specify some mechanics that will be necessary.
 
+## Itens
+### Basics
+- [x] Collect Ammo
+- [x] Collect Health
+
 ## Levels
 ### Basics
 - [x] Tilemap
-- [ ] Level 1
-- [ ] Level 2
-- [ ] Level 3
+- [x] Level 1
+- [x] Level 2
+- [x] Level 3
 
 ### Others
-- [ ] Must be able to go to next level when killing all enemies.
-- [ ] Put viewport and UI to a separete scene
+- [x] Must be able to go to next level when killing all enemies.
+- [x] Menu/game over scene
 
 ## Player
 ### Basics
@@ -19,13 +24,12 @@ Fist of all, I need to specify some mechanics that will be necessary.
 - [x] Shoot
 - [x] Health
 - [x] Take hit
-- [ ] die/game over
+- [x] die/game over
 - [x] sprint
 - [x] move and slide
 
 ### Others
 - [x] Player variables must be showing on the UI (health and ammo)
-- [ ] The weapon must be on the floor, and the player collects it
 - [x] The weapon floats around the player showing where he's aiming
 - [x] Camera follows the player (with lerp plz)
 

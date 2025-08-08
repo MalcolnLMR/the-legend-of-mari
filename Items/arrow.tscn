@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://yl0xpqo6xd0d"]
+
+[ext_resource type="Script" uid="uid://cvxm4uvl6ofx1" path="res://Items/arrow.gd" id="1_7ryke"]
+[ext_resource type="Texture2D" uid="uid://du5qb54mhfd6e" path="res://assets/sprites/world/tile028.png" id="1_xv4f7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ryke"]
+size = Vector2(39, 39)
+
+[node name="Arrow" type="RigidBody2D"]
+collision_layer = 0
+gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_7ryke")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("1_xv4f7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 4.5)
+shape = SubResource("RectangleShape2D_7ryke")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

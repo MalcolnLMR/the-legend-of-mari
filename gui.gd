@@ -4,6 +4,7 @@ extends Control
 @onready var ammo_label := $Ammo
 @onready var camera
 
+# Can be replaced by signals to better performance
 func update_label():	
 	health_label.text = "Vida: " +\
 	 str(PlayerVariables.health) +\

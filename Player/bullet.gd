@@ -20,6 +20,8 @@ func _physics_process(delta: float) -> void:
 				collider.die()
 			"enemy": 
 				collider.damage_enemy(damage)
+			"player": 
+				return
 			_: pass
 		die()
 

@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://beqifmiqmxrci" path="res://assets/sprites_rework/mari/mari_looking_up4.png" id="13_lfmf2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ddoul"]
-size = Vector2(42, 9)
+size = Vector2(9, 9)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vtle1"]
 animations = [{
@@ -82,10 +82,11 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 motion_mode = 1
+platform_floor_layers = 0
 script = ExtResource("1_q3lat")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 19.5)
+position = Vector2(1.5, 19.5)
 shape = SubResource("RectangleShape2D_ddoul")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

@@ -3,7 +3,7 @@ Is a study project to remake my project 'The Legend of Otomarih' but using Godot
 
 ## Plans
 
-- [ ] Remake the entire game
+- [x] Remake the entire game
 - [ ] Improve sprites
 - [ ] Add two new enemies
 - [ ] Add three new levels
