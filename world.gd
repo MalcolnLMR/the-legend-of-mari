@@ -13,6 +13,7 @@ signal level_change
 var next_level_timer := 2
 var timer = 0
 var is_level_done := false
+var is_game_over := false
 
 var current_level_instance: Node
 var current_level_index := 0
@@ -39,6 +40,9 @@ func _process(delta: float) -> void:
 			next_level()
 			is_level_done = false
 			timer = 0
+	if is_game_over:
+		current_level_instance.free()
+		is_game_over = false
 
 func get_enemies():
 	for enemy in get_tree().get_nodes_in_group("enemy"):
@@ -49,6 +53,7 @@ func game_over():
 	title_gui.visible = false
 	game_gui.visible = false
 	game_over_gui.visible = true
+	is_game_over = true
 
 func start_game():
 	PlayerVariables.reset_player()

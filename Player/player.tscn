@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://ckg0s5od5vkde" path="res://assets/sprites_rework/mari/mari1.png" id="2_fhl08"]
 [ext_resource type="Texture2D" uid="uid://kqis0xatt0vg" path="res://assets/sprites_rework/mari/mari_looking_down2.png" id="3_00tjw"]
 [ext_resource type="Texture2D" uid="uid://cwd5ur1nm7uat" path="res://assets/sprites_rework/mari/mari3.png" id="3_vtle1"]
+[ext_resource type="Texture2D" uid="uid://bd27kgtf0lkva" path="res://assets/sprites_rework/mari/mari_looking_up3.png" id="4_gu6f8"]
 [ext_resource type="Texture2D" uid="uid://c2tapied8wivh" path="res://assets/sprites_rework/mari/mari_looking_down3.png" id="4_x3vf3"]
-[ext_resource type="Texture2D" uid="uid://c3w4mqajte3l8" path="res://assets/sprites_rework/mari/mari2.png" id="5_00tjw"]
 [ext_resource type="Texture2D" uid="uid://ct5r18n52i0gc" path="res://assets/sprites_rework/mari/mari_looking_down4.png" id="5_apopc"]
 [ext_resource type="Texture2D" uid="uid://bm8niw1v8g1sn" path="res://assets/sprites/player/tile009.png" id="5_k53q1"]
 [ext_resource type="Texture2D" uid="uid://7um04i1qd0yc" path="res://assets/sprites_rework/mari/mari_looking_right1.png" id="7_apopc"]
@@ -16,10 +16,27 @@
 [ext_resource type="Texture2D" uid="uid://beqifmiqmxrci" path="res://assets/sprites_rework/mari/mari_looking_up4.png" id="13_lfmf2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ddoul"]
-size = Vector2(9, 9)
+size = Vector2(12, 6)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vtle1"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_dkpta")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_gu6f8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gu6f8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_lfmf2")
+}],
+"loop": true,
+"name": &"looking_1",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_fhl08")
@@ -64,7 +81,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_00tjw")
+"texture": ExtResource("12_dkpta")
 }, {
 "duration": 1.0,
 "texture": ExtResource("11_gu6f8")
@@ -86,14 +103,14 @@ platform_floor_layers = 0
 script = ExtResource("1_q3lat")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, 19.5)
+position = Vector2(0, 18)
 shape = SubResource("RectangleShape2D_ddoul")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_vtle1")
-animation = &"looking_right"
+animation = &"looking_up"
 
 [node name="Node2D" type="Node2D" parent="."]
 scale = Vector2(3, 3)

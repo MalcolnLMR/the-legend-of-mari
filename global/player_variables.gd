@@ -2,11 +2,14 @@ extends Node
 
 signal player_death
 
-var health:int = 100 : 
+@export var init_health = 10
+@export var init_ammo = 10
+
+var health:int = init_health : 
 	get: return health
-var max_health:int = health: 
+var max_health:int = 100: 
 	get: return max_health
-var ammo:int = 20: 
+var ammo:int = init_ammo: 
 	get: return ammo
 var max_ammo:int = 100: 
 	get: return max_ammo
@@ -37,8 +40,8 @@ func recharge_ammo(ammo_to_add:int) -> void:
 		ammo += ammo_to_add
 
 func reset_player() -> void:
-	health = 100
-	ammo = 20
+	health = init_health
+	ammo = init_ammo
 
 func die() -> void:
 	emit_signal("player_death")
